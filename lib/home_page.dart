@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:voiceassist_ai/feature_box.dart";
 import "package:voiceassist_ai/pallete.dart";
 
 class Homepage extends StatefulWidget {
@@ -24,8 +25,8 @@ class _HomepageState extends State<Homepage> {
             children: [
               Center(
                 child: Container(
-                  height: 200,
-                  width: 200,
+                  height: 160,
+                  width: 160,
                   margin: const EdgeInsets.only(top: 8),
                   decoration: const BoxDecoration(
                     color: Pallete.assistantCircleColor,
@@ -34,8 +35,7 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
               Container(
-                height: 206,
-                // width: 220,
+                height: 164,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
@@ -70,7 +70,53 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
           ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.centerLeft,
+            margin: const EdgeInsets.only(
+              top: 10,
+              left: 20,
+            ),
+            child: const Text(
+              "Here are a few features",
+              style: TextStyle(
+                fontFamily: 'Cera Pro',
+                color: Pallete.mainFontColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const Column(
+            children: [
+              FeatureBox(
+                color: Pallete.firstSuggestionBoxColor,
+                headerText: "ChatGPT",
+                desctext:
+                    "Be smart, think smart and act smart, to keep things organized",
+              ),
+              FeatureBox(
+                color: Pallete.secondSuggestionBoxColor,
+                headerText: "Dall-E",
+                desctext:
+                    "Perfect AI image you could ask for, be creative and get inspired",
+              ),
+              FeatureBox(
+                color: Pallete.thirdSuggestionBoxColor,
+                headerText: "Smart Voice Assistant",
+                desctext:
+                    "Get the best of both worlds with a voice assistant powered by AI",
+              ),
+            ],
+          )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color.fromARGB(255, 227, 175, 192),
+        foregroundColor: const Color.fromARGB(255, 6, 26, 42),
+        splashColor: const Color.fromARGB(255, 136, 190, 200),
+        child: const Icon(Icons.mic),
       ),
     );
   }
